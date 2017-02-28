@@ -1,0 +1,11 @@
+.card__rating
+{
+    font-size: 18px;
+    line-height: 1em;
+
+    position: absolute;
+    top: 11px;
+    right: 0;
+
+    padding: 6px 12px;
+}

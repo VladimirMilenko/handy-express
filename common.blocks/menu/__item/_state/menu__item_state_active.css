@@ -1,0 +1,10 @@
+.menu__item_state_active
+{
+    border-bottom: 2px solid #D31478;
+}
+
+.menu__item_state_active:hover .link
+{
+    color: #5d5d5d;
+}
+

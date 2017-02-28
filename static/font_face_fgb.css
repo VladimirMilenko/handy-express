@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'FGB';
+    src: url('font_face_fgb.eot?#iefix') format('embedded-opentype'),
+         url('font_face_fgb.woff') format('woff'),
+         url('font_face_fgb.ttf')  format('truetype'),
+         url('font_face_fgb.svg#FranklinGothic-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

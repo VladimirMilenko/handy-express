@@ -1,0 +1,8 @@
+.header
+{
+    position: relative;
+    height: 70px;
+    padding: 10px 60px;
+    box-sizing: border-box;
+    background: #fff;
+}

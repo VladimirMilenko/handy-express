@@ -1,0 +1,6 @@
+.card__price
+{
+    font-size: 1.3em;
+
+    text-transform: lowercase;
+}

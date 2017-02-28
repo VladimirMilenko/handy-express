@@ -1,0 +1,17 @@
+.link
+{
+    text-decoration: none;
+    outline: none;
+    color: #5d5d5d;
+}
+
+.link:active
+{
+    color: #D31478;
+}
+
+.link:hover,
+.link:focus
+{
+    color: #0C9EAF;
+}

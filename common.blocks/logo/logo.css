@@ -1,0 +1,10 @@
+.logo
+{
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    width: 71px;
+    height: 50px;
+    background: url(logo.png) no-repeat;
+    background-size: 100%;
+}

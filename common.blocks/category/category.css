@@ -1,0 +1,28 @@
+.category
+{
+    display: flex;
+
+    margin: 0 0 60px;
+
+    flex-flow: row wrap;
+}
+
+.category .card
+{
+    float: left;
+
+    width: calc(100%/2 - 15px);
+    margin: 0 0 15px 15px;
+}
+
+.category .card:nth-child(3),
+.category .card:nth-child(4)
+{
+    margin-bottom: 0;
+}
+
+.page .category:nth-child(even) .card
+{
+    margin-right: 15px;
+    margin-left: 0;
+}

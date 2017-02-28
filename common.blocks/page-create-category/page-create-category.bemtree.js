@@ -1,0 +1,84 @@
+block('page-create-category')(
+    content()(function(ctx){
+        return {
+            block:'create-service-form',
+            mix:[{block:'widget',mods:{type:'register'}}],
+            tag:'form',
+            attrs:{
+                method:'post'
+            },
+            mods:{
+                theme:'islands'
+            },
+            content:[
+                {
+                    elem:'title',
+                    content:'Создание категории',
+                    tag:'h2'
+                },
+                {
+                    block:'form-control',
+                    content:[
+                        {
+                            block:'form-control',
+                            elem:'label',
+                            content:'Название'
+                        },
+                        {
+                            block:'input',
+                            name:'title',
+                            mods:{
+                                size:'m',
+                                theme:'islands',
+                                width:'abailable',
+                                'has-clear':true
+                            },
+                            autocomplete:false
+                        }
+                    ]
+                },
+                {
+                    block:'form-control',
+                    content:[
+                        {
+                            block:'form-control',
+                            elem:'label',
+                            content:'Иконка'
+                        },
+                        {
+                            block:'input',
+                            name:'icon',
+                            mods:{
+                                size:'m',
+                                theme:'islands',
+                                width:'abailable',
+                                'has-clear':true
+                            },
+                            autocomplete:false
+                        }
+                    ]
+                },
+                {
+                    block:'csrf',
+                    tag:'input',
+                    attrs:{
+                        type:'hidden',
+                        name:'_csrf',
+                        value:ctx.data.csrf
+                    }
+                },
+                {
+                    block: 'register-form',
+                    elem:'submit',
+                    content:[
+                        {
+                            block:'button',
+                            mods: {theme: 'islands', size: 'l', view: 'action', type: 'submit'},
+                            text: 'Создать'
+                        }
+                    ]
+                },
+            ]
+        }
+    })
+);

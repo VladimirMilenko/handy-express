@@ -1,0 +1,23 @@
+.form_type_search
+{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 30px;
+    width: 30%;
+}
+
+.form_type_search .input
+{
+    background: none;
+    border-bottom: 1px solid #0C9EAF;
+}
+
+.form_type_search .input:before
+{
+    box-shadow: none!important;
+}
+
+.form_type_search .input_focused
+{
+    border-bottom: 1px solid #D31478;
+}

@@ -1,0 +1,12 @@
+.header__nav
+{
+    float: right;
+
+    padding: 18px 0;
+}
+
+.header__nav .link
+{
+    margin: 0 0 0 30px;
+    text-transform: uppercase;
+}

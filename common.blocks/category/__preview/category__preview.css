@@ -1,0 +1,36 @@
+.category__preview
+{
+    font-size: 20px;
+
+    box-sizing: border-box;
+    width: 220px;
+    padding: 70px 20px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    background: #f7f7f7;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1);
+}
+
+.category__preview:nth-child(odd)
+{
+    color: #fff;
+    background: #0c9eaf;
+}
+
+.category__preview:nth-child(even)
+{
+    color: #fff;
+    background: #d31478;
+}
+
+.category__preview .material-icons
+{
+    font-size: 75px;
+
+    display: block;
+    clear: both;
+
+    margin: 50px 0 0;
+}

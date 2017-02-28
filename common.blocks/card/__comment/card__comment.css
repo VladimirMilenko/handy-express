@@ -1,0 +1,15 @@
+.card__comment
+{
+    float: right;
+}
+
+.card__comment .material-icons
+{
+    font-size: 15px;
+
+    margin: -2px 5px 0;
+
+    vertical-align: middle;
+
+    color: #5d5d5d;
+}
