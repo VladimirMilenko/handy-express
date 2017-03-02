@@ -170,7 +170,7 @@ if (isDev) {
 isSocket && fs.existsSync(port) && fs.unlinkSync(port);
 mongoose.promise = global.Promise;
 
-mongoose.connect('mongodb://handyman:gXrpwWJiOpui6u7c5KjH7hVGlJ5jpuKxSfexVLbHJJR0CwgiTeCmOcdklOsxO0EVHeJln5CVph3LEdEuuIiOFQ==@handyman.documents.azure.com:10250/?ssl=true')
+mongoose.connect('mongodb://mongo:'+ process.env.MONGO_PORT +'/demo')
     .then(
         function () {
             app.listen(port, function () {
