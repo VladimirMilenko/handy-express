@@ -53,8 +53,11 @@ router.get('/login', function (req, res) {
         }
     })
 });
-router.post('/login', passport.authenticate('local'), function (req, res) {
-    res.redirect('/');
+router.post('/login/', passport.authenticate('local'), function (req, res) {
+    res.send({
+        success:'true',
+        redirect:'/'
+    });
 });
 
 module.exports = router;

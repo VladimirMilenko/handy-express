@@ -1,17 +1,18 @@
 .link
 {
     text-decoration: none;
-    outline: none;
+
     color: #5d5d5d;
+    outline: none;
 }
 
 .link:active
 {
-    color: #D31478;
+    color: #d31478;
 }
 
 .link:hover,
 .link:focus
 {
-    color: #0C9EAF;
+    color: #0c9eaf;
 }

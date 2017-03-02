@@ -1,0 +1,76 @@
+.form_type_login
+{
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px 30px 20px;
+  border-radius: 2px;
+  font-size:14px;
+}
+
+.form_type_login .form__header
+{
+  color: #878787;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 18px;
+}
+
+.form_type_login .form-field
+{
+  margin-bottom: 15px;
+}
+
+.form_type_login .form-field .form-field__label
+{
+    display: inline-block;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #878787;
+    text-transform: uppercase;
+}
+
+.form_type_login .input
+{
+  border-bottom: 1px solid #0c9eaf;
+  background: 0 0;
+}
+
+.form_type_login .input:active
+{
+  outline:0;
+}
+
+.form_type_login .input:before
+{
+  box-shadow: none;
+}
+
+.form_type_login .input_focused
+{
+  border-bottom: 1px solid #d31478;
+}
+
+.form_type_login .input_invalid:before
+{
+  box-shadow:  0 0 0 2px #da0c09, inset 0 1px 0 0 rgba(0, 0, 0, 0.05);
+}
+
+.form_type_login .form__footer
+{
+  border-top: 1px solid #e7e7e7;
+  padding-top: 30px;
+  margin-top: 30px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.form_type_login .form__content .submit-wrapper
+{
+  text-align: center;
+}
+
+.form_type_login .form__content .button_type_submit
+{
+  min-width: 300px;
+}
+

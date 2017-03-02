@@ -42,7 +42,7 @@ function rebuild(event, file) {
 }
 
 var debouncedRebuild = _.debounce(rebuild, 30, { leading: true, trailing: true });
-/*
+
 process.env.NO_AUTOMAKE || watch([
     path.join(rootDir, '*.blocks', '**'),
 ].concat(bundles.map(function(bundle) {
@@ -58,7 +58,7 @@ process.env.NO_LIVERELOAD || watch([
 })), watchOpts).on('all', function(event, file) {
     tinyLr.changed(file);
 });
-*/
+
 module.exports = function(app) {
     if (!app) return;
 

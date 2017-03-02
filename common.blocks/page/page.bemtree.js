@@ -30,12 +30,12 @@ block('page').content()(function (ctx) {
                         {
                             block: 'link',
                             content: 'Регистрация',
-                            url: '/users/register'
+                            url: '/users/register/'
                         },
                         {
                             block: 'link',
                             content: 'Войти',
-                            url: '/users/login'
+                            url: '/users/login/'
                         }
                     ]
                 }

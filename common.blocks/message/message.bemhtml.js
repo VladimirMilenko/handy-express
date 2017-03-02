@@ -1,0 +1,1 @@
+block('message').js()(true);

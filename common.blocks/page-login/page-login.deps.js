@@ -1,33 +1,34 @@
 ({
     shouldDeps: [
+        {block: 'form', elems: ['header', 'content'], mods: {type: 'login', message: 'popup','has-validation':true}},
+
         {
-            block: 'widget',
-            mods: {type: 'register'}
+            block: 'form-field',
+            elems: ['label', 'control'],
+            mods: {
+                type: ['input', 'hidden'],
+
+                message: 'popup',
+                required: true,
+                theme: 'islands',
+                validate: ['length']
+            }
         },
+
+        {block: 'input', mods: {theme: 'islands', size: ['m,l'], type: ['password','hidden']}},
         {
-            block: 'form-control',
-            elems: [
-                'label'
-            ]
-        },
-        {
-            block: 'register-form',
-            elems: [
-                'title',
-                'submit'
-            ]
-        },
-        {
-            block: 'input',
-            mods: {'has-clear': true, theme: 'islands', size: 'm'}
-        },
-        {
-            block: 'select',
-            mods: {mode: 'radio', theme: 'islands', size: 'm'}
-        },
-        {
-            block: 'textarea',
-            mods: {theme: 'islands', size: 'l', width: 'available'}
+            block: 'button', mods: {
+            theme: 'islands',
+            size: 'l',
+            type: 'submit',
+            width: 'available',
+            view: 'action'
         }
+        },
+        {block: 'popup', mods: {theme: 'islands', target: 'anchor', direction: ['top-left', 'right-center']}},
+
+        {block: 'login-form', js: true},
+        {block: 'message', elems: ['control'], mods: {type: 'popup'}},
+        {block: 'validation', mods: ['length']}
     ]
 })

@@ -27,10 +27,12 @@ var techs = {
         { path: 'node_modules/bem-components/desktop.blocks', check: false },
         { path: 'node_modules/bem-components/design/common.blocks', check: false },
         { path: 'node_modules/bem-components/design/desktop.blocks', check: false },
-        'common.blocks'
+        'common.blocks',
+        'example.blocks',
+        'handy.blocks'
     ];
 
-var isProd = true;// process.env.YENV === 'production';
+var isProd = process.env.YENV === 'production';
 isProd || levels.push('development.blocks');
 
 module.exports = function(config) {

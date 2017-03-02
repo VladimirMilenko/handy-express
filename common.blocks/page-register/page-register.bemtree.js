@@ -1,170 +1,204 @@
 block('page-register')(
     content()(function (ctx) {
-        return {
-            block: 'register-form',
-            mix: [{block: 'widget', mods: {type: 'register'}}],
-            tag: 'form',
-            attrs: {
-                method: 'post'
-            },
-            mods: {
-                theme: 'islands'
-            },
-            content: [
-                {
-                    elem:'title',
-                    content:'Регистрация',
-                    tag:'h2'
-                },
-                {
-                    block: 'form-control',
-                    content: [
-                        {
-                            block:'form-control',
-                            elem:'label',
-                            content:'Логин'
+        return [
+            {
+                block: 'register-form',
+                js: true,
+                content: [
+                    {
+                        block: 'form',
+                        mods: {
+                            theme: 'islands',
+                            message: 'popup',
+                            type: 'login'
                         },
-                        {
-                            block: 'input',
-                            name: 'username',
-                            mods: {
-                                size: 'm',
-                                theme: 'islands',
-                                width: 'available',
-                                'has-clear':true
+                        directions: ['right-top'],
+                        method: 'POST',
+                        content: [
+                            {
+                                elem: 'header',
+                                content: 'Регистрация'
                             },
-                            autocomplete:false
-                        }
-                    ]
-                },
-                {
-                    block: 'form-control',
-                    content:[
-                        {
-                            block:'form-control',
-                            elem:'label',
-                            content:'Пароль'
-                        },
-                        {
-                            block: 'input',
-                            name: 'password',
-                            mods: {
-                                size: 'm',
-                                type:'password',
-                                theme: 'islands',
-                                width: 'available',
-                                'has-clear':true
-                            },
-                            autocomplete:false
-                        }
-                    ],
-                },
-                {
-                    block: 'form-control',
-                    content: [
-                        {
-                            block:'form-control',
-                            elem:'label',
-                            content:'Имя'
-                        },
-                        {
-                            block: 'input',
-                            name: 'name',
-                            mods: {
-                                size: 'm',
-                                theme: 'islands',
-                                width: 'available',
-                                'has-clear':true
-                            },
-                            autocomplete:false
-                        }
-                    ]
-                },
-                {
-                    block: 'form-control',
-                    content: [
-                        {
-                            block:'form-control',
-                            elem:'label',
-                            content:'Лайки'
-                        },
-                        {
-                            block: 'input',
-                            name: 'likes',
-                            mods: {
-                                size: 'm',
-                                theme: 'islands',
-                                width: 'available',
-                                'has-clear':true
-                            },
-                            autocomplete:false
-                        }
-                    ]
-                },
-                {
-                    block: 'form-control',
-                    content: [
-                        {
-                            block:'form-control',
-                            elem:'label',
-                            content:'Дизлайки'
-                        },
-                        {
-                            block: 'input',
-                            name: 'dislikes',
-                            mods: {
-                                size: 'm',
-                                theme: 'islands',
-                                width: 'available',
-                                'has-clear':true
-                            },
-                            autocomplete:false
-                        }
-                    ]
-                },
-                {
-                    block: 'form-control',
-                    content: [
-                        {
-                            block:'form-control',
-                            elem:'label',
-                            content:'Рейтинг'
-                        },
-                        {
-                            block: 'input',
-                            name: 'rating',
-                            mods: {
-                                size: 'm',
-                                theme: 'islands',
-                                width: 'available',
-                                'has-clear':true
-                            },
-                            autocomplete:false
-                        }
-                    ]
-                },
-                {
-                    block: 'register-form',
-                    elem:'submit',
-                    content:[
-                        {
-                            block:'button',
-                            mods: {theme: 'islands', size: 'l', view: 'action', type: 'submit'},
-                            text: 'Зарегистрироваться'
-                        }
-                    ]
-                },
-                {
-                    block: 'csrf',
-                    tag: 'input',
-                    attrs: {
-                        name: '_csrf',
-                        type: 'hidden',
-                        value: ctx.data.csrf
-                    }
+                            {
+                                elem: 'content',
+                                content: [
+                                    {
+                                        block: 'form-field',
+                                        name: 'username',
+                                        mods: {
+                                            theme: 'islands',
+                                            type: 'input',
+                                            required: true,
+                                            message: 'popup',
+                                            validate:'length'
 
-                }
-            ]
-        }
+                                        },
+                                        type: 'input',
+                                        directions: ['right-center'],
+                                        js: {
+                                            required: {
+                                                message: 'Поле \'Логин\' не может быть пустым'
+                                            },
+                                            length:{
+                                                message:'Длина логина не может быть меньше 6 символов',
+                                            },
+                                            min:5
+                                        },
+                                        content: [
+                                            {
+                                                elem: 'label',
+                                                content: [
+                                                    {
+                                                        block: 'label',
+                                                        content: 'Логин'
+                                                    }
+                                                ],
+                                            },
+                                            {
+                                                elem: 'control',
+                                                content: [
+                                                    {
+                                                        block: 'input',
+                                                        mods: {theme: 'islands', size: 'l', width: 'available'},
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        block: 'form-field',
+                                        name: 'name',
+                                        mods: {
+                                            theme: 'islands',
+                                            type: 'input',
+                                            required: true,
+                                            message: 'popup',
+                                            validate:'length'
+
+                                        },
+                                        type: 'input',
+                                        directions: ['right-center'],
+                                        js: {
+                                            required: {
+                                                message: 'Поле \'Имя\' не может быть пустым'
+                                            },
+                                            length:{
+                                                message:'Длина имени не может быть меньше 1 символа',
+                                            },
+                                            min:1
+                                        },
+                                        content: [
+                                            {
+                                                elem: 'label',
+                                                content: [
+                                                    {
+                                                        block: 'label',
+                                                        content: 'Имя'
+                                                    }
+                                                ],
+                                            },
+                                            {
+                                                elem: 'control',
+                                                content: [
+                                                    {
+                                                        block: 'input',
+                                                        mods: {theme: 'islands', size: 'l', width: 'available'},
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        block: 'form-field',
+                                        name: 'password',
+                                        mods: {
+                                            theme: 'islands',
+                                            type: 'input',
+                                            required: true,
+                                            validate:'length',
+                                            message: 'popup'
+                                        },
+                                        directions: ['right-center'],
+                                        js: {
+                                            required: {
+                                                message: 'Поле \'Пароль\' не может быть пустым'
+                                            },
+                                            length:{
+                                                message:'Длина пароля не может быть меньше 6 символов',
+                                            },
+                                            min:6
+                                        },
+                                        content: [
+                                            {
+                                                elem: 'label',
+                                                content: [
+                                                    {
+                                                        block: 'label',
+                                                        content: 'Пароль'
+                                                    }
+                                                ],
+                                            },
+                                            {
+                                                elem: 'control',
+                                                content: [
+                                                    {
+                                                        block: 'input',
+                                                        mods: {
+                                                            theme: 'islands',
+                                                            type: 'password',
+                                                            size: 'l',
+                                                            width: 'available'
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        block: 'submit-wrapper',
+                                        content:[
+                                            {
+                                                block: 'button',
+                                                mods: {
+                                                    theme: 'islands',
+                                                    size: 'l',
+                                                    type: 'submit',
+                                                    width:'available',
+                                                    view: 'action'
+                                                },
+                                                text: 'РЕГИСТРАЦИЯ'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                elem: 'footer',
+                                content: [
+                                    {
+                                        block: 'login-form',
+                                        elem:'sign-up',
+                                        content:[
+                                            {
+                                                block:'text',
+                                                tag:'span',
+                                                content:'Уже зарегистрированы? '
+                                            },
+                                            {
+                                                block:'link',
+                                                content:'Войти!',
+                                                url:'/users/login/'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+
+                        ]
+                    }
+                ]
+
+            }
+        ]
     })
 );

@@ -122,6 +122,7 @@ app.get('/', function (req, res) {
                     services:services[i]
                 })
             }
+            console.log(result);
             render(req, res, {
                 view: 'page-index',
                 title: 'It Helps!',
@@ -169,7 +170,7 @@ if (isDev) {
 isSocket && fs.existsSync(port) && fs.unlinkSync(port);
 mongoose.promise = global.Promise;
 
-mongoose.connect('mongodb://astex:760326@handycluster-shard-00-00-rgwa7.mongodb.net:27017,handycluster-shard-00-01-rgwa7.mongodb.net:27017,handycluster-shard-00-02-rgwa7.mongodb.net:27017/handy?ssl=true&replicaSet=HandyCluster-shard-0&authSource=admin')
+mongoose.connect('mongodb://handyman:gXrpwWJiOpui6u7c5KjH7hVGlJ5jpuKxSfexVLbHJJR0CwgiTeCmOcdklOsxO0EVHeJln5CVph3LEdEuuIiOFQ==@handyman.documents.azure.com:10250/?ssl=true')
     .then(
         function () {
             app.listen(port, function () {
