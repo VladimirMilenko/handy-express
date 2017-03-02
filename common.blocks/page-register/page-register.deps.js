@@ -1,12 +1,13 @@
 ({
     shouldDeps: [
-        {block: 'form', elems: ['header', 'content'], mods: {type: 'login', message: 'popup'}},
+        {block: 'form', elems: ['header', 'content'], mods: {type: 'login', message: 'popup','has-validation':true}},
 
         {
             block: 'form-field',
             elems: ['label', 'control'],
             mods: {
                 type: ['input', 'hidden'],
+
                 message: 'popup',
                 required: true,
                 theme: 'islands',
@@ -14,7 +15,7 @@
             }
         },
 
-        {block: 'input', mods: {theme: 'islands', size: ['m,l'], type: ['password']}},
+        {block: 'input', mods: {theme: 'islands', size: ['m,l'], type: ['password','hidden']}},
         {
             block: 'button', mods: {
             theme: 'islands',
@@ -26,7 +27,7 @@
         },
         {block: 'popup', mods: {theme: 'islands', target: 'anchor', direction: ['top-left', 'right-center']}},
 
-        {block: 'login-form', js: true},
+        {block: 'register-form', js: true},
         {block: 'message', elems: ['control'], mods: {type: 'popup'}},
         {block: 'validation', mods: ['length']}
     ]

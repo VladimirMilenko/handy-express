@@ -17,7 +17,7 @@ var bundlesDir = path.join(rootDir, 'desktop.bundles');
 var bundles = fs.readdirSync(bundlesDir).filter(function(file) {
     return fs.statSync(path.join(bundlesDir, file)).isDirectory();
 });
-
+console.log(rootDir);
 // enb make
 function rebuild(event, file) {
     // TODO: get target via file extention

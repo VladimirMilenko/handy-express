@@ -14,6 +14,8 @@ block('page-register')(
                         },
                         directions: ['right-top'],
                         method: 'POST',
+                        action: '/',
+                        enctype: 'application/x-www-form-urlencoded',
                         content: [
                             {
                                 elem: 'header',
@@ -153,6 +155,14 @@ block('page-register')(
                                                 ]
                                             }
                                         ]
+                                    },
+                                    {
+                                        block: 'form-field',
+                                        mods: {
+                                            type: 'hidden',
+                                        },
+                                        name: '_csrf',
+                                        val: ctx.data.csrf
                                     },
                                     {
                                         block: 'submit-wrapper',

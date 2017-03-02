@@ -22,6 +22,7 @@ router.get('/register', function (req, res) {
 });
 
 router.post('/register', function (req, res) {
+    console.log('post');
     User.register(new User(
         {
             username: req.body.username,
@@ -33,7 +34,10 @@ router.post('/register', function (req, res) {
         }))
         .then(function (user) {
             req.login(user, function () {
-                res.redirect('/');
+                res.send({
+                    success:'true',
+                    redirect:'/'
+                });
             })
         })
         .catch(function (error) {
@@ -54,6 +58,7 @@ router.get('/login', function (req, res) {
     })
 });
 router.post('/login/', passport.authenticate('local'), function (req, res) {
+
     res.send({
         success:'true',
         redirect:'/'

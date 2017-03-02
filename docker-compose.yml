@@ -7,6 +7,6 @@ services:
     volumes:
       - ./:/usr/src/app
     ports:
-      - "48060:8081"
+      - "48060:8080"
   mongo:
     image: mongo

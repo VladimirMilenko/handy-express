@@ -112,8 +112,8 @@
     "start": "node server",
     "postinstall":"enb make",
     "make": "enb make",
-    "dev": "npm run make && nodemon",
-    "prod": "set NODE_ENV=production&& enb make && node server/clustering",
+    "dev": "npm run make && nodemon -L",
+    "prod": "npm run make && nodemon -L",
     "watch": "chokidar '*.blocks/**' --initial -c 'enb make && notify -t bem-express -m Built'",
     "test": "npm run lint && npm run make",
     "lint": "eslint . && bemhint . && stylelint *.blocks/**/*.css"

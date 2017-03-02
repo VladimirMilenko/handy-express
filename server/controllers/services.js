@@ -12,6 +12,7 @@ const express = require('express'),
 router.get('/create', function (req, res) {
     Category.find().limit(5).exec()
         .then(function(categories){
+
             let catArray = categories.map(function(category){
                return {val:category._id + '',text:category.title}
             });
@@ -28,6 +29,7 @@ router.get('/create', function (req, res) {
                 categories:catArray
             })
         });
+        
 
 });
 

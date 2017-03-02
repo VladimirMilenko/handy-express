@@ -2,8 +2,8 @@
  * @module app
  */
 modules.define('register-form',
-    ['i-bem-dom', 'form'],
-    function (provide, bemDom, Form) {
+    ['i-bem-dom', 'form' ,'jquery'],
+    function (provide, bemDom, Form, $) {
         /**
          * login-form block
          */
@@ -12,12 +12,13 @@ modules.define('register-form',
             onSetMod: {
                 'js': {
                     'inited': function () {
-                        console.log(this);
                         this._form = this.findChildBlock(Form);
                         this._form._domEvents().on('submit', function (e, val) {
                             this._form.validate()
                                 .then(function (fieldsStatuses) {
+                                    console.log(fieldsStatuses);
                                     if (this._form.checkFields(fieldsStatuses)) {
+                                        console.log(fieldsStatuses);
                                         this._form.getMessage().hide();
                                         $.ajax({
                                             type: "POST",
